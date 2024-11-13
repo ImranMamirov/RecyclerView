@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.recyclerview.databinding.ItemCountryBinding;
+import com.example.recyclerview.ui.data.CountryCapitalData;
 
 public class CountryAdapter extends ListAdapter<String, CountryAdapter.CountryViewHolder> {
 
@@ -53,6 +55,10 @@ public class CountryAdapter extends ListAdapter<String, CountryAdapter.CountryVi
 
         void bind(String country) {
             binding.tvCountry.setText(country);
+            String flagUrl = CountryCapitalData.getFlagUrlForCountry(country);
+            Glide.with(binding.imgCountry.getContext())
+                    .load(flagUrl)
+                    .into(binding.imgCountry);
             binding.getRoot().setOnClickListener(v -> onClickListener.onClick(country));
         }
     }

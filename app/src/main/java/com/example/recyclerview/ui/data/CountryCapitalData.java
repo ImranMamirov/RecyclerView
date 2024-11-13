@@ -41,46 +41,40 @@ public class CountryCapitalData {
         }
     }
 
-//    // Статическая карта для хранения стран и их столиц
-//    private static final Map<String, String> countryCapitalMap = new HashMap<>();
-//
-//    static {
-//        // Заполнение карты стран и столиц
-//        countryCapitalMap.put("Nigeria", "Abuja");
-//        countryCapitalMap.put("Egypt", "Cairo");
-//        countryCapitalMap.put("South Africa", "Pretoria");
-//        countryCapitalMap.put("Kenya", "Nairobi");
-//        countryCapitalMap.put("Ethiopia", "Addis Ababa");
-//        countryCapitalMap.put("China", "Beijing");
-//        countryCapitalMap.put("India", "New Delhi");
-//        countryCapitalMap.put("Japan", "Tokyo");
-//        countryCapitalMap.put("South Korea", "Seoul");
-//        countryCapitalMap.put("Indonesia", "Jakarta");
-//        countryCapitalMap.put("Germany", "Berlin");
-//        countryCapitalMap.put("France", "Paris");
-//        countryCapitalMap.put("United Kingdom", "London");
-//        countryCapitalMap.put("Italy", "Rome");
-//        countryCapitalMap.put("Spain", "Madrid");
-//        countryCapitalMap.put("United States", "Washington, D.C.");
-//        countryCapitalMap.put("Canada", "Ottawa");
-//        countryCapitalMap.put("Mexico", "Mexico City");
-//        countryCapitalMap.put("Cuba", "Havana");
-//        countryCapitalMap.put("Guatemala", "Guatemala City");
-//        countryCapitalMap.put("Brazil", "Brasília");
-//        countryCapitalMap.put("Argentina", "Buenos Aires");
-//        countryCapitalMap.put("Colombia", "Bogotá");
-//        countryCapitalMap.put("Peru", "Lima");
-//        countryCapitalMap.put("Chile", "Santiago");
-//        countryCapitalMap.put("Australia", "Canberra");
-//        countryCapitalMap.put("New Zealand", "Wellington");
-//        countryCapitalMap.put("Fiji", "Suva");
-//        countryCapitalMap.put("Papua New Guinea", "Port Moresby");
-//        countryCapitalMap.put("Samoa", "Apia");
-//        countryCapitalMap.put("Antarctica", "No capital");
-//    }
-//
-//    // Метод для получения столицы по названию страны
-//    public static String getCapitalForCountry(String country) {
-//        return countryCapitalMap.getOrDefault(country, "Capital not available");
-//    }
+    public static String getFlagUrlForCountry(String country) {
+        switch (country) {
+            case "Nigeria": return "https://www.worldometers.info/img/flags/small/tn_ni-flag.gif";
+            case "Egypt": return "https://www.worldometers.info/img/flags/small/tn_eg-flag.gif";
+            case "South Africa": return "https://www.worldometers.info/img/flags/small/tn_sf-flag.gif";
+            case "Kenya": return "https://www.worldometers.info/img/flags/small/tn_ke-flag.gif";
+            case "Ethiopia": return "https://www.worldometers.info/img/flags/small/tn_et-flag.gif";
+            case "China": return "https://www.worldometers.info/img/flags/small/tn_ch-flag.gif";
+            case "India": return "https://www.worldometers.info/img/flags/small/tn_in-flag.gif";
+            case "Japan": return "https://www.worldometers.info/img/flags/small/tn_ja-flag.gif";
+            case "South Korea": return "https://www.worldometers.info/img/flags/small/tn_ks-flag.gif";
+            case "Indonesia": return "https://www.worldometers.info/img/flags/small/tn_id-flag.gif";
+            case "Germany": return "https://www.worldometers.info/img/flags/gm-flag.gif";
+            case "France": return "https://www.worldometers.info/img/flags/small/tn_fr-flag.gif";
+            case "United Kingdom": return "https://www.worldometers.info/img/flags/small/tn_uk-flag.gif";
+            case "Italy": return "https://www.worldometers.info/img/flags/small/tn_it-flag.gif";
+            case "Spain": return "https://www.worldometers.info/img/flags/small/tn_sp-flag.gif";
+            case "United States": return "https://www.worldometers.info/img/flags/small/tn_us-flag.gif";
+            case "Canada": return "https://www.worldometers.info/img/flags/small/tn_ca-flag.gif";
+            case "Mexico": return "https://www.worldometers.info/img/flags/small/tn_mx-flag.gif";
+            case "Cuba": return "https://www.worldometers.info/img/flags/small/tn_cu-flag.gif";
+            case "Guatemala": return "https://www.worldometers.info/img/flags/small/tn_gt-flag.gif";
+            case "Brazil": return "https://www.worldometers.info/img/flags/small/tn_br-flag.gif";
+            case "Argentina": return "https://www.worldometers.info/img/flags/small/tn_ar-flag.gif";
+            case "Colombia": return "https://www.worldometers.info/img/flags/small/tn_co-flag.gif";
+            case "Peru": return "https://www.worldometers.info/img/flags/small/tn_pe-flag.gif";
+            case "Chile": return "https://www.worldometers.info/img/flags/small/tn_ci-flag.gif";
+            case "Australia": return "https://www.worldometers.info/img/flags/small/tn_as-flag.gif";
+            case "New Zealand": return "https://www.worldometers.info/img/flags/small/tn_nz-flag.gif";
+            case "Fiji": return "https://www.worldometers.info/img/flags/small/tn_fj-flag.gif";
+            case "Papua New Guinea": return "https://www.worldometers.info/img/flags/small/tn_pp-flag.gif";
+            case "Samoa": return "https://www.worldometers.info/img/flags/small/tn_ws-flag.gif";
+            case "Antarctica": return "https://example.com/flags/antarctica.png";
+            default: return "https://example.com/flags/default.png";
+        }
+    }
 }

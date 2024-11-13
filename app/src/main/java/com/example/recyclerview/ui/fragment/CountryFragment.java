@@ -1,5 +1,7 @@
 package com.example.recyclerview.ui.fragment;
 
+import static com.example.recyclerview.ui.data.CountryCapitalData.getFlagUrlForCountry;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -41,6 +43,7 @@ public class CountryFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putString("Country", country);
             bundle.putString("Capital", getCapitalForCountry(country));
+            bundle.putString("FlagUrl", getFlagUrlForCountry(country));
             cityFragment.setArguments(bundle);
 
             requireActivity().getSupportFragmentManager().beginTransaction()
