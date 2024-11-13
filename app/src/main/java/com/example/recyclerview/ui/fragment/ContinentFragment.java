@@ -25,16 +25,6 @@ public class ContinentFragment extends Fragment {
     private FragmentContinentBinding binding;
     private ContinentAdapter continentAdapter;
 
-    private final Map<String, List<String>> countriesByContinent = new HashMap<String, List<String>>() {{
-        put("Africa", Arrays.asList("Nigeria", "Egypt", "South Africa", "Kenya", "Ethiopia"));
-        put("Asia", Arrays.asList("China", "India", "Japan", "South Korea", "Indonesia"));
-        put("Europe", Arrays.asList("Germany", "France", "United Kingdom", "Italy", "Spain"));
-        put("North America", Arrays.asList("United States", "Canada", "Mexico", "Cuba", "Guatemala"));
-        put("South America", Arrays.asList("Brazil", "Argentina", "Colombia", "Peru", "Chile"));
-        put("Australia", Arrays.asList("Australia", "New Zealand", "Fiji", "Papua New Guinea", "Samoa"));
-        put("Antarctica", Arrays.asList("Research Station 1", "Research Station 2", "Research Station 3", "Research Station 4", "Research Station 5"));
-    }};
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,7 +41,7 @@ public class ContinentFragment extends Fragment {
             Bundle bundle = new Bundle();
 
             bundle.putString("Continent", continent);
-            bundle.putStringArrayList("Countries", new ArrayList<>(countriesByContinent.get(continent)));
+            bundle.putStringArrayList("Countries", new ArrayList<>(getCountriesByContinent(continent)));
             countryFragment.setArguments(bundle);
 
             requireActivity().getSupportFragmentManager().beginTransaction()
@@ -64,5 +54,26 @@ public class ContinentFragment extends Fragment {
 
         List<String> continents = Arrays.asList("Africa", "Asia", "Europe", "North America", "South America", "Australia", "Antarctica");
         continentAdapter.submitList(continents);
+    }
+
+    private List<String> getCountriesByContinent(String continent) {
+        switch (continent) {
+            case "Africa":
+                return Arrays.asList("Nigeria", "Egypt", "South Africa", "Kenya", "Ethiopia");
+            case "Asia":
+                return Arrays.asList("China", "India", "Japan", "South Korea", "Indonesia");
+            case "Europe":
+                return Arrays.asList("Germany", "France", "United Kingdom", "Italy", "Spain");
+            case "North America":
+                return Arrays.asList("United States", "Canada", "Mexico", "Cuba", "Guatemala");
+            case "South America":
+                return Arrays.asList("Brazil", "Argentina", "Colombia", "Peru", "Chile");
+            case "Australia":
+                return Arrays.asList("Australia", "New Zealand", "Fiji", "Papua New Guinea", "Samoa");
+            case "Antarctica":
+                return Arrays.asList("Research Station 1", "Research Station 2", "Research Station 3", "Research Station 4", "Research Station 5");
+            default:
+                return new ArrayList<>();
+        }
     }
 }
