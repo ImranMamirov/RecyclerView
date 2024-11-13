@@ -22,7 +22,6 @@ import java.util.List;
 public class CountryFragment extends Fragment {
 
     private FragmentCountryBinding binding;
-    private CountryAdapter countryAdapter;
 
     @Nullable
     @Override
@@ -37,7 +36,7 @@ public class CountryFragment extends Fragment {
 
         List<String> countries = getArguments() != null ? getArguments().getStringArrayList("Countries") : new ArrayList<>();
 
-        countryAdapter = new CountryAdapter(country -> {
+        CountryAdapter countryAdapter = new CountryAdapter(country -> {
             CityFragment cityFragment = new CityFragment();
             Bundle bundle = new Bundle();
             bundle.putString("Country", country);

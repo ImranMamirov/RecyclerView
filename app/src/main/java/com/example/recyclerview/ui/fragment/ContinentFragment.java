@@ -23,7 +23,6 @@ import java.util.Map;
 public class ContinentFragment extends Fragment {
 
     private FragmentContinentBinding binding;
-    private ContinentAdapter continentAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,7 +35,7 @@ public class ContinentFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        continentAdapter = new ContinentAdapter(continent -> {
+        ContinentAdapter continentAdapter = new ContinentAdapter(continent -> {
             CountryFragment countryFragment = new CountryFragment();
             Bundle bundle = new Bundle();
 
